@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="src/Dash.Client/App.axaml" value="src/Dash.Client.Desktop/Dash.Client.Desktop.csproj" />
+        <entry key="src/Dash.Client/Views/AboutView.axaml" value="src/Dash.Client.Desktop/Dash.Client.Desktop.csproj" />
+        <entry key="src/Dash.Client/Views/DashboardView.axaml" value="src/Dash.Client.Desktop/Dash.Client.Desktop.csproj" />
+        <entry key="src/Dash.Client/Views/DebugView.axaml" value="src/Dash.Client.Desktop/Dash.Client.Desktop.csproj" />
+        <entry key="src/Dash.Client/Views/MainView.axaml" value="src/Dash.Client.Desktop/Dash.Client.Desktop.csproj" />
+        <entry key="src/Dash.Client/Views/MainWindow.axaml" value="src/Dash.Client.Desktop/Dash.Client.Desktop.csproj" />
+        <entry key="src/Dash.Client/Views/SettingsView.axaml" value="src/Dash.Client.Desktop/Dash.Client.Desktop.csproj" />
+        <entry key="src/Dash.Client/Views/ToolbarView.axaml" value="src/Dash.Client.Desktop/Dash.Client.Desktop.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

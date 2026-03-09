@@ -1,0 +1,37 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:Dash.Client.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Dash.Client.Views.ToolbarView"
+             x:DataType="vm:ToolbarViewModel">
+    <Border BorderBrush="Red" BorderThickness="1">
+        <Grid>
+            <Grid ColumnDefinitions="Auto,*,Auto">
+                <!-- Left: menu -->
+                <Menu Grid.Column="0" VerticalAlignment="Center">
+                    <MenuItem
+                        Margin="8,0"
+                        Classes="Primary"
+                        Header="Dash">
+                        <MenuItem Header="Settings" InputGesture="Ctrl + S" />
+                        <MenuItem Header="Keyboard shortcuts" InputGesture="Ctrl + K" />
+                        <Separator />
+                        <MenuItem Header="View">
+                            <CheckBox ClickMode="Press">Debug menu</CheckBox>
+                        </MenuItem>
+                    </MenuItem>
+                </Menu>
+
+                <!-- Center: pages -->
+                <TabStrip Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TabStripItem>Page 1</TabStripItem>
+                    <TabStripItem>Page 2</TabStripItem>
+                    <TabStripItem>Page 3</TabStripItem>
+                </TabStrip>
+                
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

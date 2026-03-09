@@ -1,0 +1,30 @@
+<Project>
+  <!-- https://learn.microsoft.com/en-us/nuget/consume-packages/central-package-management -->
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+  <!-- InventingAnimals.Ink: prefer local repo sibling, fall back to NuGet -->
+  <PropertyGroup>
+    <InkLocalPath>$([MSBuild]::NormalizePath($(MSBuildThisFileDirectory), '..', 'ink', 'src', 'Ink.UI', 'Ink.UI.csproj'))</InkLocalPath>
+    <UseLocalInk Condition="Exists('$(InkLocalPath)')">true</UseLocalInk>
+    <UseLocalInk Condition="'$(UseLocalInk)' == ''">false</UseLocalInk>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageVersion Include="InventingAnimals.Ink" Version="0.1.0" />
+    <!-- Avalonia packages -->
+    <!-- Important: keep version in sync! -->
+    <PackageVersion Include="Avalonia" Version="11.3.11" />
+    <PackageVersion Include="Avalonia.Themes.Fluent" Version="11.3.11" />
+    <PackageVersion Include="Avalonia.Fonts.Inter" Version="11.3.11" />
+    <PackageVersion Include="Avalonia.Diagnostics" Version="11.3.11" />
+    <PackageVersion Include="Avalonia.Desktop" Version="11.3.11" />
+    <PackageVersion Include="Avalonia.iOS" Version="11.3.11" />
+    <PackageVersion Include="Avalonia.Browser" Version="11.3.11" />
+    <PackageVersion Include="Avalonia.Android" Version="11.3.11" />
+    <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="10.0.2" />
+    <PackageVersion Include="ShadUI" Version="0.1.6" />
+    <PackageVersion Include="Xamarin.AndroidX.Core.SplashScreen" Version="1.0.1.15" />
+  </ItemGroup>
+</Project>

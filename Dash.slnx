@@ -1,0 +1,7 @@
+<Solution>
+    <Project Path="src/Dash.Client/Dash.Client.csproj"/>
+    <Project Path="src/Dash.Client.iOS/Dash.Client.iOS.csproj"/>
+    <Project Path="src/Dash.Client.Desktop/Dash.Client.Desktop.csproj"/>
+    <Project Path="src/Dash.Client.Browser/Dash.Client.Browser.csproj"/>
+    <Project Path="src/Dash.Client.Android/Dash.Client.Android.csproj"/>
+</Solution>
