@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for your interest in contributing to Dash. All contributions are welcome — bug fixes, new features, documentation improvements, and general enhancements. Open an issue or a pull request and we will take a look.
+Thanks for your interest in contributing to Dash. All contributions are welcome: bug fixes, new features, documentation improvements, and general enhancements. Open an issue or a pull request and we will take a look.
 
 ## UI library issues
 
