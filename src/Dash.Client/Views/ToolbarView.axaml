@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="using:Dash.Client.ViewModels"
+             xmlns:ink="clr-namespace:Ink.UI.Controls;assembly=Ink.UI"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Dash.Client.Views.ToolbarView"
              x:DataType="vm:ToolbarViewModel">
@@ -25,12 +26,11 @@
                 </Menu>
 
                 <!-- Center: pages -->
-                <TabStrip Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <ink:TabStrip Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TabStripItem>Page 1</TabStripItem>
                     <TabStripItem>Page 2</TabStripItem>
                     <TabStripItem>Page 3</TabStripItem>
-                </TabStrip>
-                
+                </ink:TabStrip>
             </Grid>
         </Grid>
     </Border>

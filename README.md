@@ -7,6 +7,12 @@ Information dashboard application built with [Avalonia](https://avaloniaui.net/)
 
 **[Documentation](https://inventing-animals.github.io/dash/)** | **[Live demo](https://inventing-animals.github.io/dash/demo/)**
 
+
+## Contact
+
+- Security isssues: security@inventing-animals.com
+- Talk to us at: hello@inventing-animals.com
+
 ## License
 
 MIT

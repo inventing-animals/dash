@@ -3,12 +3,14 @@
              xmlns:local="using:Dash.Client"
              x:Class="Dash.Client.App"
              xmlns:themes="clr-namespace:ShadUI;assembly=ShadUI"
+             xmlns:ink="clr-namespace:Ink.UI.Controls;assembly=Ink.UI"
              RequestedThemeVariant="Default">
     <Application.DataTemplates>
         <local:ViewLocator />
     </Application.DataTemplates>
 
     <Application.Styles>
+        <StyleInclude Source="avares://Ink.UI/Themes/InkTheme.axaml" />
         <themes:ShadTheme />
     </Application.Styles>
 </Application>
