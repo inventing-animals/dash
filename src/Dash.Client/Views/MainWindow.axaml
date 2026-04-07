@@ -8,6 +8,7 @@
         Icon="/Assets/icon.ico"
         ExtendClientAreaToDecorationsHint="True"
         ExtendClientAreaTitleBarHeightHint="60"
+        WindowDecorations="BorderOnly"
         Title="Dash">
     <views:MainView />
 </Window>
