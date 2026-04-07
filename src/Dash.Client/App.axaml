@@ -11,6 +11,5 @@
 
     <Application.Styles>
         <StyleInclude Source="avares://Ink.UI/Themes/InkTheme.axaml" />
-        <themes:ShadTheme />
     </Application.Styles>
 </Application>
