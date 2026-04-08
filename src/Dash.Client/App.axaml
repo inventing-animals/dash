@@ -2,7 +2,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="using:Dash.Client"
              x:Class="Dash.Client.App"
-             xmlns:themes="clr-namespace:ShadUI;assembly=ShadUI"
              xmlns:ink="clr-namespace:Ink.UI.Controls;assembly=Ink.UI"
              RequestedThemeVariant="Default">
     <Application.DataTemplates>
@@ -10,6 +9,6 @@
     </Application.DataTemplates>
 
     <Application.Styles>
-        <StyleInclude Source="avares://Ink.UI/Themes/InkTheme.axaml" />
+        <ink:InkTheme />
     </Application.Styles>
 </Application>
