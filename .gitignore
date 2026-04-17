@@ -5,3 +5,7 @@ riderModule.iml
 /_ReSharper.Caches/
 .claude
 .copilot
+src/Dash.Server/Dash.Server.Api/data/*.db
+src/Dash.Server/Dash.Server.Api/data/*.db-shm
+src/Dash.Server/Dash.Server.Api/data/*.db-wal
+src/Dash.Server/Dash.Server.Api/data/*.migrations.lock

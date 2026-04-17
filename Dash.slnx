@@ -9,8 +9,12 @@
     </Folder>
     <Folder Name="/Dash.Server/">
         <Project Path="src/Dash.Server/Dash.Server.Api/Dash.Server.Api.csproj" />
+        <Project Path="src/Dash.Server/Dash.Server.Domain/Dash.Server.Domain.csproj" />
+        <Project Path="src/Dash.Server/Dash.Server.Migrations/Dash.Server.Migrations.csproj" />
         <Project Path="src/Dash.Server/Dash.Server.WidgetHost/Dash.Server.WidgetHost.csproj" />
         <Project Path="src/Dash.Server/Dash.Server.Persistence/Dash.Server.Persistence.csproj" />
+        <Project Path="src/Dash.Server/Dash.Server.Persistence.Sqlite/Dash.Server.Persistence.Sqlite.csproj" />
+        <Project Path="src/Dash.Server/Dash.Server.Persistence.PostgreSql/Dash.Server.Persistence.PostgreSql.csproj" />
         <Project Path="src/Dash.Server/Dash.Server.Observability/Dash.Server.Observability.csproj" />
     </Folder>
     <Folder Name="/Dash.WidgetSdk/">

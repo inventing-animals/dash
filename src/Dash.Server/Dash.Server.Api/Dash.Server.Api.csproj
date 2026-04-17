@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Dash.Server.Migrations\Dash.Server.Migrations.csproj" />
+    <ProjectReference Include="..\Dash.Server.Persistence\Dash.Server.Persistence.csproj" />
+    <ProjectReference Include="..\Dash.Server.Persistence.PostgreSql\Dash.Server.Persistence.PostgreSql.csproj" />
+    <ProjectReference Include="..\Dash.Server.Persistence.Sqlite\Dash.Server.Persistence.Sqlite.csproj" />
     <ProjectReference Include="..\Dash.Server.Observability\Dash.Server.Observability.csproj" />
   </ItemGroup>
 </Project>
