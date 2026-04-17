@@ -1,4 +1,5 @@
 using Dash.Server.Api.Config;
+using Dash.Server.Api.Endpoints;
 using Dash.Server.Observability;
 using Dash.Server.Persistence;
 using Dash.Server.Persistence.PostgreSql;
@@ -21,12 +22,15 @@ switch (databaseSettings.Provider)
 
 MigrationConfig.Register(builder.Services, databaseSettings);
 HealthChecksConfig.Register(builder.Services);
+OpenApiConfig.Register(builder.Services);
 
 var app = builder.Build();
 
 await MigrationConfig.EnsureUpToDateAsync(app);
 
+OpenApiConfig.Use(app);
 HealthChecksConfig.Map(app);
+app.MapUserEndpoints();
 
 app.Run();
 

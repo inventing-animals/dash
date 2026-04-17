@@ -35,6 +35,10 @@ Information dashboard application built with [Avalonia](https://avaloniaui.net/)
   `src/Dash.Server/Dash.Server.Api/data/dash.dev.db`
 - The shared migration set also seeds a small sample dashboard with a couple of users, pages, and the current `digital-clock` / `email-checker` widgets.
 
+## API Docs
+
+- In development, the server exposes OpenAPI at `/openapi/v1.json` and Scalar at `/scalar`.
+
 
 ## Contact
 
