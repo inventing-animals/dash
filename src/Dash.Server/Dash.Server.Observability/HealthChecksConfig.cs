@@ -13,7 +13,7 @@ public static class HealthChecksConfig
         services
             .AddHealthChecks()
             .AddCheck("self", () => HealthCheckResult.Healthy(), ["live"])
-            .AddCheck<DatabaseReadinessHealthCheck>("postgresql", tags: ["ready"]);
+            .AddCheck<DatabaseReadinessHealthCheck>("database", tags: ["ready"]);
     }
 
     public static void Map(WebApplication app)

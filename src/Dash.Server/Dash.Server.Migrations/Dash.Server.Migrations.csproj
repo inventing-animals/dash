@@ -10,10 +10,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" />
+    <PackageReference Include="FluentMigrator" />
+    <PackageReference Include="FluentMigrator.Runner.SQLite" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Dash.Server.Domain\Dash.Server.Domain.csproj" />
+    <ProjectReference Include="..\Dash.Server.Persistence\Dash.Server.Persistence.csproj" />
   </ItemGroup>
 </Project>
