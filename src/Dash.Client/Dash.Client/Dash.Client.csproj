@@ -25,4 +25,12 @@
     <ItemGroup Condition="'$(UseLocalInk)' != 'true'">
         <PackageReference Include="InventingAnimals.Ink" />
     </ItemGroup>
+
+    <!-- InventingAnimals.Ink.Platform: local repo wins over NuGet -->
+    <ItemGroup Condition="'$(UseLocalInkPlatform)' == 'true'">
+        <ProjectReference Include="$(InkPlatformLocalPath)" />
+    </ItemGroup>
+    <ItemGroup Condition="'$(UseLocalInkPlatform)' != 'true'">
+        <PackageReference Include="InventingAnimals.Ink.Platform" />
+    </ItemGroup>
 </Project>

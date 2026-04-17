@@ -7,6 +7,11 @@ Information dashboard application built with [Avalonia](https://avaloniaui.net/)
 
 **[Documentation](https://inventing-animals.github.io/dash/)** | **[Live demo](https://inventing-animals.github.io/dash/demo/)**
 
+## Solution Layout
+
+- `src/Dash.Client/`: master folder for the shared Avalonia client project and platform-specific hosts.
+- `src/Dash.Server/`: master folder for the ASP.NET Core health API scaffold, persistence readiness checks, and observability wiring.
+
 
 ## Contact
 

@@ -6,8 +6,6 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Dash.Client.Views.MainWindow"
         Icon="/Assets/icon.ico"
-        ExtendClientAreaToDecorationsHint="True"
-        ExtendClientAreaTitleBarHeightHint="60"
         WindowDecorations="BorderOnly"
         Title="Dash">
     <views:MainView />

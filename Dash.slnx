@@ -1,7 +1,14 @@
 <Solution>
-    <Project Path="src/Dash.Client/Dash.Client.csproj"/>
-    <Project Path="src/Dash.Client.iOS/Dash.Client.iOS.csproj"/>
-    <Project Path="src/Dash.Client.Desktop/Dash.Client.Desktop.csproj"/>
-    <Project Path="src/Dash.Client.Browser/Dash.Client.Browser.csproj"/>
-    <Project Path="src/Dash.Client.Android/Dash.Client.Android.csproj"/>
+    <Folder Name="/Dash.Client/">
+        <Project Path="src/Dash.Client/Dash.Client/Dash.Client.csproj" />
+        <Project Path="src/Dash.Client/Dash.Client.iOS/Dash.Client.iOS.csproj" />
+        <Project Path="src/Dash.Client/Dash.Client.Desktop/Dash.Client.Desktop.csproj" />
+        <Project Path="src/Dash.Client/Dash.Client.Browser/Dash.Client.Browser.csproj" />
+        <Project Path="src/Dash.Client/Dash.Client.Android/Dash.Client.Android.csproj" />
+    </Folder>
+    <Folder Name="/Dash.Server/">
+        <Project Path="src/Dash.Server/Dash.Server.Api/Dash.Server.Api.csproj" />
+        <Project Path="src/Dash.Server/Dash.Server.Persistence/Dash.Server.Persistence.csproj" />
+        <Project Path="src/Dash.Server/Dash.Server.Observability/Dash.Server.Observability.csproj" />
+    </Folder>
 </Solution>

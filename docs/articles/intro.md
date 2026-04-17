@@ -5,13 +5,13 @@ Dash is an information dashboard application built with [Avalonia](https://avalo
 ## Running locally (desktop)
 
 ```bash
-dotnet run --project src/Dash.Client.Desktop/Dash.Client.Desktop.csproj
+dotnet run --project src/Dash.Client/Dash.Client.Desktop/Dash.Client.Desktop.csproj
 ```
 
 ## Running the WASM demo locally
 
 ```bash
-dotnet run --project src/Dash.Client.Browser/Dash.Client.Browser.csproj
+dotnet run --project src/Dash.Client/Dash.Client.Browser/Dash.Client.Browser.csproj
 ```
 
 ## Contributing

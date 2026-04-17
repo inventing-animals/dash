@@ -9,26 +9,20 @@
              x:DataType="vm:MainViewModel">
 
     <Grid RowDefinitions="Auto,*">
-        <!-- Toolbar -->
         <Border Grid.Row="0" Height="60">
             <views:ToolbarView DataContext="{Binding Toolbar}" />
         </Border>
 
-        <!-- Content + overlays -->
         <Grid Grid.Row="1">
-            <!-- Main content -->
             <Grid>
-                <TextBlock IsVisible="{Binding IsDashboard}" Text="Dashboard view goes here" />
-                <TextBlock IsVisible="{Binding IsSettings}"  Text="Settings view goes here" />
+                <views:DashboardView IsVisible="{Binding IsDashboard}" DataContext="{Binding Dashboard}" />
+                <views:SettingsView IsVisible="{Binding IsSettings}" DataContext="{Binding Settings}" />
             </Grid>
 
-            <!-- Debug overlay -->
             <views:DebugView DataContext="{Binding Debug}"
                              HorizontalAlignment="Right"
                              VerticalAlignment="Top"
                              Margin="8" />
         </Grid>
     </Grid>
-
-
 </UserControl>

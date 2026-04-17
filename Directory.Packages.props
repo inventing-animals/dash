@@ -5,13 +5,23 @@
   </PropertyGroup>
   <!-- InventingAnimals.Ink: prefer local repo sibling, fall back to NuGet -->
   <PropertyGroup>
-    <InkLocalPath>$([MSBuild]::NormalizePath($(MSBuildThisFileDirectory), '..', 'ink', 'src', 'Ink.UI', 'Ink.UI.csproj'))</InkLocalPath>
+    <PreferredInkLocalPath>$(MSBuildThisFileDirectory)..\..\org\inventing-animals\ink\src\Ink.UI\Ink.UI.csproj</PreferredInkLocalPath>
+    <FallbackInkLocalPath>$(MSBuildThisFileDirectory)..\ink\src\Ink.UI\Ink.UI.csproj</FallbackInkLocalPath>
+    <PreferredInkPlatformLocalPath>$(MSBuildThisFileDirectory)..\..\org\inventing-animals\ink\src\Ink.Platform\Ink.Platform.csproj</PreferredInkPlatformLocalPath>
+    <FallbackInkPlatformLocalPath>$(MSBuildThisFileDirectory)..\ink\src\Ink.Platform\Ink.Platform.csproj</FallbackInkPlatformLocalPath>
+    <InkLocalPath Condition="Exists('$(PreferredInkLocalPath)')">$(PreferredInkLocalPath)</InkLocalPath>
+    <InkLocalPath Condition="'$(InkLocalPath)' == ''">$(FallbackInkLocalPath)</InkLocalPath>
     <UseLocalInk Condition="Exists('$(InkLocalPath)')">true</UseLocalInk>
     <UseLocalInk Condition="'$(UseLocalInk)' == ''">false</UseLocalInk>
+    <InkPlatformLocalPath Condition="Exists('$(PreferredInkPlatformLocalPath)')">$(PreferredInkPlatformLocalPath)</InkPlatformLocalPath>
+    <InkPlatformLocalPath Condition="'$(InkPlatformLocalPath)' == ''">$(FallbackInkPlatformLocalPath)</InkPlatformLocalPath>
+    <UseLocalInkPlatform Condition="Exists('$(InkPlatformLocalPath)')">true</UseLocalInkPlatform>
+    <UseLocalInkPlatform Condition="'$(UseLocalInkPlatform)' == ''">false</UseLocalInkPlatform>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageVersion Include="InventingAnimals.Ink" Version="0.7.0" />
+    <PackageVersion Include="InventingAnimals.Ink.Platform" Version="0.7.0" />
     <!-- Avalonia packages -->
     <!-- Important: keep version in sync! -->
     <PackageVersion Include="Avalonia" Version="12.0.0" />
