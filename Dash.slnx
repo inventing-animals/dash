@@ -1,6 +1,7 @@
 <Solution>
     <Folder Name="/Dash.Client/">
         <Project Path="src/Dash.Client/Dash.Client/Dash.Client.csproj" />
+        <Project Path="src/Dash.Client/Dash.Client.WidgetHost/Dash.Client.WidgetHost.csproj" />
         <Project Path="src/Dash.Client/Dash.Client.iOS/Dash.Client.iOS.csproj" />
         <Project Path="src/Dash.Client/Dash.Client.Desktop/Dash.Client.Desktop.csproj" />
         <Project Path="src/Dash.Client/Dash.Client.Browser/Dash.Client.Browser.csproj" />
@@ -8,7 +9,21 @@
     </Folder>
     <Folder Name="/Dash.Server/">
         <Project Path="src/Dash.Server/Dash.Server.Api/Dash.Server.Api.csproj" />
+        <Project Path="src/Dash.Server/Dash.Server.WidgetHost/Dash.Server.WidgetHost.csproj" />
         <Project Path="src/Dash.Server/Dash.Server.Persistence/Dash.Server.Persistence.csproj" />
         <Project Path="src/Dash.Server/Dash.Server.Observability/Dash.Server.Observability.csproj" />
+    </Folder>
+    <Folder Name="/Dash.WidgetSdk/">
+        <Project Path="src/Dash.WidgetSdk/Dash.WidgetSdk.Abstractions/Dash.WidgetSdk.Abstractions.csproj" />
+        <Project Path="src/Dash.WidgetSdk/Dash.WidgetSdk.Avalonia/Dash.WidgetSdk.Avalonia.csproj" />
+        <Project Path="src/Dash.WidgetSdk/Dash.WidgetSdk.Server/Dash.WidgetSdk.Server.csproj" />
+        <Project Path="src/Dash.WidgetSdk/Dash.WidgetSdk.Serialization.Json/Dash.WidgetSdk.Serialization.Json.csproj" />
+    </Folder>
+    <Folder Name="/Dash.Widgets/">
+        <Project Path="src/Dash.Widgets/Dash.Widgets.DigitalClock/Dash.Widgets.DigitalClock/Dash.Widgets.DigitalClock.csproj" />
+        <Project Path="src/Dash.Widgets/Dash.Widgets.DigitalClock/Dash.Widgets.DigitalClock.Client/Dash.Widgets.DigitalClock.Client.csproj" />
+        <Project Path="src/Dash.Widgets/Dash.Widgets.EmailChecker/Dash.Widgets.EmailChecker/Dash.Widgets.EmailChecker.csproj" />
+        <Project Path="src/Dash.Widgets/Dash.Widgets.EmailChecker/Dash.Widgets.EmailChecker.Client/Dash.Widgets.EmailChecker.Client.csproj" />
+        <Project Path="src/Dash.Widgets/Dash.Widgets.EmailChecker/Dash.Widgets.EmailChecker.Server/Dash.Widgets.EmailChecker.Server.csproj" />
     </Folder>
 </Solution>
