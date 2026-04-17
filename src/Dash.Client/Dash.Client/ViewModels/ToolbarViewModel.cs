@@ -1,6 +1,7 @@
-﻿using System;
+using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using CommunityToolkit.Mvvm.Input;
 using Dash.Client.Core;
 
 namespace Dash.Client.ViewModels;
@@ -13,15 +14,22 @@ public sealed class ToolbarViewModel : INotifyPropertyChanged, IDisposable
     {
         _store = contextService?.getStore() ?? throw new ArgumentNullException(nameof(contextService));
         _store.StateChanged += OnStateChanged;
+        GoDashboardCommand = new RelayCommand(GoDashboard);
+        GoSettingsCommand = new RelayCommand(GoSettings);
     }
 
     public event PropertyChangedEventHandler? PropertyChanged;
+
+    public RelayCommand GoDashboardCommand { get; }
+
+    public RelayCommand GoSettingsCommand { get; }
 
     public State State => _store.State;
 
     public Mode Mode => State.Mode;
 
     public bool IsDashboard => Mode == Mode.Dashboard;
+
     public bool IsSettings => Mode == Mode.Settings;
 
     public void GoDashboard()

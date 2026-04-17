@@ -1,0 +1,63 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:Dash.Client.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Dash.Client.Views.SettingsView"
+             x:DataType="vm:SettingsViewModel">
+    <Border BorderBrush="Blue" BorderThickness="1" Padding="20">
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="180,*">
+            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" FontSize="20" FontWeight="SemiBold" Text="Server connection" />
+
+            <TextBlock Grid.Row="1" VerticalAlignment="Center" Margin="0,16,12,0" Text="Mode" />
+            <ComboBox Grid.Row="1"
+                      Grid.Column="1"
+                      Margin="0,16,0,0"
+                      ItemsSource="{Binding ServerModes}"
+                      SelectedItem="{Binding SelectedServerMode}" />
+
+            <TextBlock Grid.Row="2"
+                       VerticalAlignment="Center"
+                       Margin="0,16,12,0"
+                       IsVisible="{Binding IsLocalMode}"
+                       Text="Local executable" />
+            <TextBox Grid.Row="2"
+                     Grid.Column="1"
+                     Margin="0,16,0,0"
+                     IsVisible="{Binding IsLocalMode}"
+                     Text="{Binding LocalExecutablePath}" />
+
+            <TextBlock Grid.Row="3"
+                       VerticalAlignment="Center"
+                       Margin="0,16,12,0"
+                       IsVisible="{Binding IsRemoteMode}"
+                       Text="Remote host URL" />
+            <TextBox Grid.Row="3"
+                     Grid.Column="1"
+                     Margin="0,16,0,0"
+                     IsVisible="{Binding IsRemoteMode}"
+                     Text="{Binding RemoteHostUrl}" />
+
+            <TextBlock Grid.Row="4"
+                       Grid.ColumnSpan="2"
+                       Margin="0,16,0,0"
+                       Foreground="Gray"
+                       Text="Local mode launches a child server process on desktop. Remote mode stores the host URL for later API integration." />
+
+            <TextBlock Grid.Row="5"
+                       Grid.ColumnSpan="2"
+                       Margin="0,16,0,0"
+                       Text="{Binding StatusMessage}" />
+
+            <StackPanel Grid.Row="6"
+                        Grid.ColumnSpan="2"
+                        Margin="0,16,0,0"
+                        Orientation="Horizontal"
+                        Spacing="12">
+                <Button Command="{Binding SaveCommand}" Content="Save" />
+                <Button Command="{Binding GoDashboardCommand}" Content="Back to dashboard" />
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>
