@@ -60,15 +60,15 @@ public sealed class Bootstrap_202604170002_SeedSampleData : Migration
             {
                 WidgetId = Guid.Parse("8ca49f74-f37c-4b66-b093-2fb47075a202"),
                 PageId = AliceHomePageId,
-                WidgetType = "dash.widgets.email-checker",
-                ConfigurationJson = """{"AccountLabel":"Personal inbox","Folder":"Inbox","PollingInterval":"00:05:00"}""",
+                WidgetType = "dash.widgets.random-number",
+                ConfigurationJson = """{"Min":1,"Max":100}""",
             })
             .Row(new
             {
                 WidgetId = Guid.Parse("8ca49f74-f37c-4b66-b093-2fb47075a203"),
                 PageId = AliceWorkPageId,
-                WidgetType = "dash.widgets.email-checker",
-                ConfigurationJson = """{"AccountLabel":"Work mail","Folder":"Priority","PollingInterval":"00:02:00"}""",
+                WidgetType = "dash.widgets.random-number",
+                ConfigurationJson = """{"Min":1,"Max":1000}""",
             })
             .Row(new
             {

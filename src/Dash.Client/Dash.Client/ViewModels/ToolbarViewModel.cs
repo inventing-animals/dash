@@ -1,7 +1,9 @@
 using System;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using CommunityToolkit.Mvvm.Input;
+using Dash.Client.Api;
 using Dash.Client.Core;
 
 namespace Dash.Client.ViewModels;
@@ -26,6 +28,23 @@ public sealed class ToolbarViewModel : INotifyPropertyChanged, IDisposable
 
     public State State => _store.State;
 
+    public System.Collections.Generic.IReadOnlyList<PageData> Pages => State.Pages;
+
+    public PageData? SelectedPage
+    {
+        get => State.Pages.FirstOrDefault(page => page.PageId == State.CurrentPageId);
+        set
+        {
+            if (value is null || value.PageId == State.CurrentPageId)
+            {
+                return;
+            }
+
+            _store.Dispatch(new SelectPage(value.PageId));
+            _store.Dispatch(new Navigate(Mode.Dashboard));
+        }
+    }
+
     public Mode Mode => State.Mode;
 
     public bool IsDashboard => Mode == Mode.Dashboard;
@@ -45,6 +64,8 @@ public sealed class ToolbarViewModel : INotifyPropertyChanged, IDisposable
     private void OnStateChanged(object? sender, State newState)
     {
         OnPropertyChanged(nameof(State));
+        OnPropertyChanged(nameof(Pages));
+        OnPropertyChanged(nameof(SelectedPage));
         OnPropertyChanged(nameof(Mode));
         OnPropertyChanged(nameof(IsDashboard));
         OnPropertyChanged(nameof(IsSettings));

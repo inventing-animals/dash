@@ -1,4 +1,4 @@
-﻿<UserControl xmlns="https://github.com/avaloniaui"
+<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -6,7 +6,34 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Dash.Client.Views.DashboardView"
              x:DataType="vm:DashboardViewModel">
-    <Border BorderBrush="Blue" BorderThickness="1">
-        <Label Content="Dashboard view goes here" HorizontalAlignment="Center" VerticalAlignment="Center" />
-    </Border>
+    <Grid>
+        <Grid RowDefinitions="Auto,*"
+              Margin="16">
+            <StackPanel Grid.Row="0"
+                        Spacing="4"
+                        Margin="0,0,0,16">
+                <TextBlock Text="{Binding SelectedPageName}"
+                           FontSize="22"
+                           FontWeight="SemiBold" />
+                <TextBlock Text="{Binding SelectedPageWidgetCount, StringFormat='{}{0} widgets'}"
+                           Opacity="0.6" />
+            </StackPanel>
+
+            <!-- Status overlay: Loading / Error -->
+            <TextBlock Grid.Row="1"
+                       IsVisible="{Binding StatusMessage, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
+                       Text="{Binding StatusMessage}"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="16"
+                       Opacity="0.6" />
+
+            <!-- Widget grid -->
+            <ScrollViewer Grid.Row="1"
+                          IsVisible="{Binding StatusMessage, Converter={x:Static StringConverters.IsNullOrEmpty}}">
+                <WrapPanel x:Name="WidgetPanel"
+                           Orientation="Horizontal" />
+            </ScrollViewer>
+        </Grid>
+    </Grid>
 </UserControl>

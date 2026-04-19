@@ -20,6 +20,10 @@ public sealed class WidgetConfiguration : IEntityTypeConfiguration<Widget>
             .HasColumnType("TEXT")
             .IsRequired();
 
+        builder.Property(widget => widget.StateJson)
+            .HasColumnType("TEXT")
+            .IsRequired(false);
+
         builder.HasIndex(widget => new { widget.PageId, widget.WidgetType });
     }
 }

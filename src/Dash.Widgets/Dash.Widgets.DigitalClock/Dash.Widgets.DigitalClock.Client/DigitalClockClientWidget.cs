@@ -1,6 +1,7 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Layout;
+using Avalonia.Threading;
 using Dash.WidgetSdk.Avalonia;
 using Dash.WidgetSdk.Serialization.Json;
 
@@ -15,12 +16,28 @@ public sealed class DigitalClockClientWidget : IAvaloniaWidget
         var configuration = WidgetJsonSerializer.Deserialize<DigitalClockWidgetConfiguration>(context.Instance.Configuration) ??
                             DigitalClockWidgetConfiguration.Default;
         var timeZone = ResolveTimeZone(configuration.TimeZoneId);
-        var now = TimeZoneInfo.ConvertTime(DateTimeOffset.UtcNow, timeZone);
         var format = string.IsNullOrWhiteSpace(configuration.Format)
             ? DigitalClockWidgetConfiguration.Default.Format
             : configuration.Format;
+        var timeText = new TextBlock
+        {
+            FontSize = 28,
+        };
 
-        return new Border
+        void UpdateClock()
+        {
+            var now = TimeZoneInfo.ConvertTime(DateTimeOffset.UtcNow, timeZone);
+            timeText.Text = now.ToString(format);
+        }
+
+        var timer = new DispatcherTimer
+        {
+            Interval = TimeSpan.FromSeconds(1),
+        };
+
+        timer.Tick += (_, _) => UpdateClock();
+
+        var root = new Border
         {
             Padding = new Thickness(16),
             Child = new StackPanel
@@ -33,11 +50,7 @@ public sealed class DigitalClockClientWidget : IAvaloniaWidget
                         FontSize = 14,
                         Text = Definition.Display.Name,
                     },
-                    new TextBlock
-                    {
-                        FontSize = 28,
-                        Text = now.ToString(format),
-                    },
+                    timeText,
                     new TextBlock
                     {
                         FontSize = 12,
@@ -46,6 +59,18 @@ public sealed class DigitalClockClientWidget : IAvaloniaWidget
                 },
             },
         };
+
+        root.AttachedToVisualTree += (_, _) =>
+        {
+            UpdateClock();
+            timer.Start();
+        };
+
+        root.DetachedFromVisualTree += (_, _) => timer.Stop();
+
+        UpdateClock();
+
+        return root;
     }
 
     private static TimeZoneInfo ResolveTimeZone(string timeZoneId)

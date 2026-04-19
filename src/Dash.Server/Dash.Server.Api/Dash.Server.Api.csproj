@@ -12,10 +12,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Dash.WidgetSdk\Dash.WidgetSdk.Abstractions\Dash.WidgetSdk.Abstractions.csproj" />
+    <ProjectReference Include="..\..\Dash.WidgetSdk\Dash.WidgetSdk.Server\Dash.WidgetSdk.Server.csproj" />
     <ProjectReference Include="..\Dash.Server.Migrations\Dash.Server.Migrations.csproj" />
     <ProjectReference Include="..\Dash.Server.Persistence\Dash.Server.Persistence.csproj" />
     <ProjectReference Include="..\Dash.Server.Persistence.PostgreSql\Dash.Server.Persistence.PostgreSql.csproj" />
     <ProjectReference Include="..\Dash.Server.Persistence.Sqlite\Dash.Server.Persistence.Sqlite.csproj" />
     <ProjectReference Include="..\Dash.Server.Observability\Dash.Server.Observability.csproj" />
+    <ProjectReference Include="..\Dash.Server.WidgetHost\Dash.Server.WidgetHost.csproj" />
+    <ProjectReference Include="..\..\Dash.Widgets\Dash.Widgets.RandomNumber\Dash.Widgets.RandomNumber.Server\Dash.Widgets.RandomNumber.Server.csproj" />
   </ItemGroup>
 </Project>

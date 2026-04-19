@@ -4,6 +4,8 @@
     <option name="projectPerEditor">
       <map>
         <entry key="src/Dash.Client/App.axaml" value="src/Dash.Client.Desktop/Dash.Client.Desktop.csproj" />
+        <entry key="src/Dash.Client/Dash.Client/App.axaml" value="src/Dash.Client/Dash.Client.Desktop/Dash.Client.Desktop.csproj" />
+        <entry key="src/Dash.Client/Dash.Client/Views/SettingsView.axaml" value="src/Dash.Client/Dash.Client.Desktop/Dash.Client.Desktop.csproj" />
         <entry key="src/Dash.Client/Views/AboutView.axaml" value="src/Dash.Client.Desktop/Dash.Client.Desktop.csproj" />
         <entry key="src/Dash.Client/Views/DashboardView.axaml" value="src/Dash.Client.Desktop/Dash.Client.Desktop.csproj" />
         <entry key="src/Dash.Client/Views/DebugView.axaml" value="src/Dash.Client.Desktop/Dash.Client.Desktop.csproj" />

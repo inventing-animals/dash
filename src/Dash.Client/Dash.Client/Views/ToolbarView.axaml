@@ -2,16 +2,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:api="using:Dash.Client.Api"
+             xmlns:ink="clr-namespace:Ink.UI.Controls;assembly=Ink.UI"
              xmlns:vm="using:Dash.Client.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Dash.Client.Views.ToolbarView"
              x:DataType="vm:ToolbarViewModel">
     <Border BorderBrush="Red" BorderThickness="1">
-        <Grid>
-            <Grid ColumnDefinitions="Auto,*,Auto">
+        <Grid Margin="8,0">
+            <Grid ColumnDefinitions="Auto,*,Auto"
+                  ColumnSpacing="12">
                 <Menu Grid.Column="0" VerticalAlignment="Center">
                     <MenuItem
-                        Margin="8,0"
                         Classes="Primary"
                         Header="Dash">
                         <MenuItem Command="{Binding GoSettingsCommand}" Header="Settings" InputGesture="Ctrl + S" />
@@ -23,11 +25,22 @@
                     </MenuItem>
                 </Menu>
 
-                <StackPanel Grid.Column="1"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
+                <ink:TabStrip Grid.Column="1"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              ItemsSource="{Binding Pages}"
+                              SelectedItem="{Binding SelectedPage, Mode=TwoWay}">
+                    <ink:TabStrip.ItemTemplate>
+                        <DataTemplate x:DataType="api:PageData">
+                            <TextBlock Text="{Binding Name}" />
+                        </DataTemplate>
+                    </ink:TabStrip.ItemTemplate>
+                </ink:TabStrip>
+
+                <StackPanel Grid.Column="2"
                             Orientation="Horizontal"
-                            Spacing="12">
+                            Spacing="12"
+                            VerticalAlignment="Center">
                     <Button Command="{Binding GoDashboardCommand}" Content="Dashboard" />
                     <Button Command="{Binding GoSettingsCommand}" Content="Settings" />
                 </StackPanel>

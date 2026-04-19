@@ -10,5 +10,8 @@ public sealed class Widget
 
     public string ConfigurationJson { get; set; } = "{}";
 
+    /// <summary>Last-known serialized <see cref="Dash.WidgetSdk.Abstractions.WidgetStateEnvelope"/>. Null until the widget has executed at least once.</summary>
+    public string? StateJson { get; set; }
+
     public Page Page { get; set; } = null!;
 }

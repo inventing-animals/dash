@@ -9,5 +9,5 @@ public sealed record ServerConnectionSettings(
         new(
             ServerConnectionMode.Remote,
             string.Empty,
-            "http://127.0.0.1:5190");
+            "http://127.0.0.1:5000");
 }
