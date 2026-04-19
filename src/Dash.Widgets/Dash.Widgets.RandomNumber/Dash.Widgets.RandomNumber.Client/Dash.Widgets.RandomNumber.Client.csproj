@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Dash.Widgets.EmailChecker\Dash.Widgets.EmailChecker.csproj" />
-    <ProjectReference Include="..\..\..\Dash.WidgetSdk\Dash.WidgetSdk.Server\Dash.WidgetSdk.Server.csproj" />
+    <ProjectReference Include="..\Dash.Widgets.RandomNumber\Dash.Widgets.RandomNumber.csproj" />
+    <ProjectReference Include="..\..\..\Dash.WidgetSdk\Dash.WidgetSdk.Avalonia\Dash.WidgetSdk.Avalonia.csproj" />
     <ProjectReference Include="..\..\..\Dash.WidgetSdk\Dash.WidgetSdk.Serialization.Json\Dash.WidgetSdk.Serialization.Json.csproj" />
   </ItemGroup>
 </Project>

@@ -31,11 +31,13 @@ public static class WidgetJsonSerializer
     public static WidgetStateEnvelope CreateStateEnvelope<TState>(
         string instanceId,
         string widgetType,
-        TState state)
+        TState state,
+        int stateVersion = 1)
     {
         return new(
             instanceId,
             widgetType,
+            stateVersion,
             DateTimeOffset.UtcNow,
             SerializeToElement(state));
     }

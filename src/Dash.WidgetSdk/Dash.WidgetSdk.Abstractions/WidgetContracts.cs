@@ -27,5 +27,6 @@ public sealed record WidgetInstanceConfiguration(
 public sealed record WidgetStateEnvelope(
     string InstanceId,
     string WidgetType,
+    int StateVersion,
     DateTimeOffset UpdatedAtUtc,
     JsonElement State);

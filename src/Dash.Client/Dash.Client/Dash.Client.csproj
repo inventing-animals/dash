@@ -14,8 +14,18 @@
         <PackageReference Include="Avalonia.Themes.Fluent"/>
         <PackageReference Include="Avalonia.Fonts.Inter"/>
         <PackageReference Include="CommunityToolkit.Mvvm"/>
+        <PackageReference Include="Microsoft.AspNetCore.SignalR.Client"/>
         <PackageReference Include="Microsoft.Extensions.DependencyInjection"/>
         <PackageReference Include="ShadUI"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\Dash.WidgetSdk\Dash.WidgetSdk.Abstractions\Dash.WidgetSdk.Abstractions.csproj" />
+        <ProjectReference Include="..\..\Dash.WidgetSdk\Dash.WidgetSdk.Avalonia\Dash.WidgetSdk.Avalonia.csproj" />
+        <ProjectReference Include="..\..\Dash.WidgetSdk\Dash.WidgetSdk.Serialization.Json\Dash.WidgetSdk.Serialization.Json.csproj" />
+        <ProjectReference Include="..\Dash.Client.WidgetHost\Dash.Client.WidgetHost.csproj" />
+        <ProjectReference Include="..\..\Dash.Widgets\Dash.Widgets.DigitalClock\Dash.Widgets.DigitalClock.Client\Dash.Widgets.DigitalClock.Client.csproj" />
+        <ProjectReference Include="..\..\Dash.Widgets\Dash.Widgets.RandomNumber\Dash.Widgets.RandomNumber.Client\Dash.Widgets.RandomNumber.Client.csproj" />
     </ItemGroup>
 
     <!-- InventingAnimals.Ink: local repo wins over NuGet -->
