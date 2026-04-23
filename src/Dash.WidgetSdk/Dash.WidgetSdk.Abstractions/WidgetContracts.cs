@@ -30,3 +30,4 @@ public sealed record WidgetStateEnvelope(
     int StateVersion,
     DateTimeOffset UpdatedAtUtc,
     JsonElement State);
+ 
