@@ -6,6 +6,11 @@ on:
   pull_request:
     branches: [main]
 
+env:
+  DOTNET_VERSION: '10.0.x'
+  CLIENT_PROJECT: src/Dash.Client/Dash.Client/Dash.Client.csproj
+  BROWSER_PROJECT: src/Dash.Client/Dash.Client.Browser/Dash.Client.Browser.csproj
+
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
@@ -15,13 +20,13 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '10.0.x'
+          dotnet-version: ${{ env.DOTNET_VERSION }}
 
       - name: Restore
-        run: dotnet restore src/Dash.Client/Dash.Client.csproj
+        run: dotnet restore "$CLIENT_PROJECT"
 
       - name: Build
-        run: dotnet build src/Dash.Client/Dash.Client.csproj --no-restore -c Release
+        run: dotnet build "$CLIENT_PROJECT" --no-restore -c Release
 
       - name: Test
         run: |
@@ -42,7 +47,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '10.0.x'
+          dotnet-version: ${{ env.DOTNET_VERSION }}
 
       - name: Install DocFX
         run: dotnet tool install -g docfx
@@ -54,7 +59,7 @@ jobs:
         run: dotnet workload install wasm-tools
 
       - name: Publish WASM demo
-        run: dotnet publish src/Dash.Client.Browser/Dash.Client.Browser.csproj -c Release -o ./wasm-out
+        run: dotnet publish "$BROWSER_PROJECT" -c Release -o ./wasm-out
 
       - name: Copy WASM demo into docs site
         run: |

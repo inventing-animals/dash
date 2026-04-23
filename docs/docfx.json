@@ -3,7 +3,7 @@
     {
       "src": [
         {
-          "files": ["**/*.csproj"],
+          "files": ["Dash.Client/Dash.Client.csproj"],
           "src": "../src/Dash.Client"
         }
       ],
