@@ -68,6 +68,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./docs/_site
+          retention-days: 1
 
   deploy-pages:
     needs: build-pages
