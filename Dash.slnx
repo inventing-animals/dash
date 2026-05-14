@@ -5,6 +5,7 @@
         <Project Path="src/Dash.Client/Dash.Client.Desktop/Dash.Client.Desktop.csproj" />
         <Project Path="src/Dash.Client/Dash.Client.Browser/Dash.Client.Browser.csproj" />
         <Project Path="src/Dash.Client/Dash.Client.Android/Dash.Client.Android.csproj" />
+        <Project Path="src/Dash.Client/Dash.Client.iOS/Dash.Client.iOS.csproj" />
     </Folder>
     <Folder Name="/Dash.Server/">
         <Project Path="src/Dash.Server/Dash.Server.Api/Dash.Server.Api.csproj" />
